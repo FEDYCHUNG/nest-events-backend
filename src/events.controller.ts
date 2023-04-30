@@ -9,6 +9,7 @@ import {
     HttpCode,
 } from '@nestjs/common';
 import { CreateEventDto } from './create-event.dto';
+import { UpdateEventDto } from './update-event.dto';
 
 @Controller('/events')
 export class EventController {
@@ -31,7 +32,7 @@ export class EventController {
     }
 
     @Patch(':id')
-    udpate(@Param('id') id, @Body() input) {
+    udpate(@Param('id') id, @Body() input: UpdateEventDto) {
         return input;
     }
 
